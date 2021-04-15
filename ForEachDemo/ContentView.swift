@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-  //MARK: - VARIABLES
+  // MARK: - VARIABLES
   var array = ["Pizza", "Burrito", "Sushi"]
   
-  //MARK: - BODY
+  // MARK: - BODY
   var body: some View {
-    //VStack
+    
+    // MARK: - Examples
+    
+    // Example 1
+    // VStack
     VStack {
       ForEach (array, id: \.self) { recipe in
         // This code will be repeated for each element in the array.
@@ -21,7 +25,8 @@ struct ContentView: View {
       }
     }
     
-    //VStack - ForEach alternative syntax with leading index displayed.
+    // Example 2
+    // VStack - ForEach alternative syntax with leading index displayed.
     VStack {
       ForEach (0..<2, id: \.self) { index in
         // This code will be repeated for each element in the array.
@@ -29,12 +34,14 @@ struct ContentView: View {
       }
     }
     
+    // Example 3
     // ...compare to List. Similar syntax without the VStack.
     List (array, id: \.self) { recipe in
       // This code will be repeated for each element in the array.
       Text(recipe)
     }
     
+    // Example 4
     // ...compare to ScrollView. Combo of VStack approach and List approach above. Similar syntax.
     ScrollView {
       ForEach (array, id: \.self) { recipe in
@@ -45,7 +52,7 @@ struct ContentView: View {
   }
 }
 
-//MARK: - PREVIEW
+// MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
